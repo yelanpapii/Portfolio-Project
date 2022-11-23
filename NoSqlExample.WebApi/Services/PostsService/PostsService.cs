@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.Extensions.Logging;
 using MongoDB.Driver.Linq;
-using NoSqlExample.WebApi.Models;
 using NoSqlExample.WebApi.NoSqlRepository;
 using System.Collections.Generic;
 using System.Linq;
@@ -55,8 +54,11 @@ namespace NoSqlExample.WebApi.Services.PostsService
             //Metodo paralelo para añadir a db
             Parallel.Invoke(async () =>
             {
-                var toDbPost = _mapper.Map<Post>(post);
-                await this.BeginPostAddition(toDbPost);
+                var currentPost = await _postRepository.FindOneAsync(post.id);
+                if (currentPost is null)
+                {
+                    await this.BeginPostAdditionAsync(post);
+                }
             });
 
             return post;
@@ -71,20 +73,25 @@ namespace NoSqlExample.WebApi.Services.PostsService
             if (response.StatusCode == HttpStatusCode.NotFound) return null;
 
             var posts = await response.Content.ReadFromJsonAsync<ICollection<PostDTO>>();
+            posts = posts.Where(x => x.userId == userId).ToList();
 
             //Metodo en paralelo para añadir a db
             Parallel.Invoke(async () =>
             {
                 //lista filtrada de post mediante userId
-                List<Post> filter = _mapper.Map<List<Post>>(posts).Where(x => x.userId == userId).ToList();
-
-                foreach (var post in filter)
+                //List<Post> filter = _mapper.Map<List<Post>>(posts).Where(x => x.userId == userId).ToList()
+                foreach (var post in posts)
                 {
-                    await this.BeginPostAddition(post);
+                    var currentPost = await _postRepository.FindOneAsync(post.id);
+
+                    if (currentPost is null)
+                    {
+                        await this.BeginPostAdditionAsync(post);
+                    }
                 }
             });
 
-            return posts.Where(x => x.userId == userId).ToList();
+            return posts;
         }
     }
 }
