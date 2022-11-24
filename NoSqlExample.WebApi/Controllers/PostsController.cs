@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using NoSqlExample.WebApi.Services;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -24,6 +25,7 @@ namespace NoSqlExample.WebApi.Controllers
         [HttpGet]
         public async Task<IEnumerable<object>> GetAllPost()
         {
+            Log.Information("{time} Getting all the posts", DateTime.UtcNow.ToString());
             _logger.LogInformation("{time} Getting all the posts", DateTime.UtcNow.ToString());
 
             return await _postService.GetAllPostAsync();
