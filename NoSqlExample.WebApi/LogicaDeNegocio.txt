@@ -1,3 +1,2 @@
 ﻿Api que consume una api restful y guarda los datos recuperados de la api restful en una base de datos NoSql
-Mover logica para agregar post a base datos a clase parcial si no funciono entonces revisar que la conexion con mongo se ejecuto correctamente.
 Implementar authentication.

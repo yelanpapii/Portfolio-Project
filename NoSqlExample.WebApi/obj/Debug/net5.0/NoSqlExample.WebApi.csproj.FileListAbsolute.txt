@@ -45,3 +45,13 @@ D:\Matic_Projects\c#\NoSqlExample\NoSqlExample.WebApi\bin\Debug\net5.0\ZstdSharp
 D:\Matic_Projects\c#\NoSqlExample\NoSqlExample.WebApi\bin\Debug\net5.0\runtimes\linux\native\libmongocrypt.so
 D:\Matic_Projects\c#\NoSqlExample\NoSqlExample.WebApi\bin\Debug\net5.0\runtimes\osx\native\libmongocrypt.dylib
 D:\Matic_Projects\c#\NoSqlExample\NoSqlExample.WebApi\bin\Debug\net5.0\runtimes\win\native\mongocrypt.dll
+D:\Matic_Projects\c#\NoSqlExample\NoSqlExample.WebApi\bin\Debug\net5.0\Microsoft.Extensions.DependencyModel.dll
+D:\Matic_Projects\c#\NoSqlExample\NoSqlExample.WebApi\bin\Debug\net5.0\Serilog.dll
+D:\Matic_Projects\c#\NoSqlExample\NoSqlExample.WebApi\bin\Debug\net5.0\Serilog.AspNetCore.dll
+D:\Matic_Projects\c#\NoSqlExample\NoSqlExample.WebApi\bin\Debug\net5.0\Serilog.Extensions.Hosting.dll
+D:\Matic_Projects\c#\NoSqlExample\NoSqlExample.WebApi\bin\Debug\net5.0\Serilog.Extensions.Logging.dll
+D:\Matic_Projects\c#\NoSqlExample\NoSqlExample.WebApi\bin\Debug\net5.0\Serilog.Formatting.Compact.dll
+D:\Matic_Projects\c#\NoSqlExample\NoSqlExample.WebApi\bin\Debug\net5.0\Serilog.Settings.Configuration.dll
+D:\Matic_Projects\c#\NoSqlExample\NoSqlExample.WebApi\bin\Debug\net5.0\Serilog.Sinks.Console.dll
+D:\Matic_Projects\c#\NoSqlExample\NoSqlExample.WebApi\bin\Debug\net5.0\Serilog.Sinks.Debug.dll
+D:\Matic_Projects\c#\NoSqlExample\NoSqlExample.WebApi\bin\Debug\net5.0\Serilog.Sinks.File.dll

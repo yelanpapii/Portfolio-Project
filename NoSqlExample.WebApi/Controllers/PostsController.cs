@@ -46,5 +46,12 @@ namespace NoSqlExample.WebApi.Controllers
 
             return await _postService.GetAllPostByUserIdAsync(id);
         }
+        [HttpPut]
+        public ActionResult UpdatePostFromDatabaseAsync(PostDTO post, int id)
+        {
+            _logger.LogInformation("{time} Updating the posts", DateTime.UtcNow.ToString());
+
+              return Ok(_postService.UpdatePostFromDatabaseAsync(post, id));
+        }
     }
 }

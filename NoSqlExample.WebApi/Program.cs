@@ -16,7 +16,8 @@ namespace NoSqlExample.WebApi
         {
             //Configuracion de metodo estatico para guardar logs de tipo warning en un archivo
             Log.Logger = new LoggerConfiguration()
-                .MinimumLevel.Warning()
+                .MinimumLevel.Information()
+                .WriteTo.Console()
                 .WriteTo.File("D:\\Matic_Projects\\c#\\NoSqlExample\\NoSqlExample.WebApi\\Common\\Logs\\log.txt", rollingInterval: RollingInterval.Day)
                 .CreateLogger();
             CreateHostBuilder(args).Build().Run();

@@ -93,5 +93,9 @@ namespace NoSqlExample.WebApi.Services.PostsService
 
             return posts;
         }
+        public async Task UpdatePostFromDatabaseAsync(PostDTO post, int id)
+        {
+            await this.BeginPostUpdateAsync(id, post);
+        }
     }
 }
